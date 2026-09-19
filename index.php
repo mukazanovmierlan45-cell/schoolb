@@ -14,6 +14,15 @@
   * и приводим строку к целому числу от 0 до 23
   */
   $hour = (int) date('H');
+
+  // Инициализация массива
+  $leftMenu = [
+    ['link'=>'Домой', 'href'=>'index.php'],
+    ['link'=>'О нас', 'href'=>'about.php'],
+    ['link'=>'Контакты', 'href'=>'contact.php'],
+    ['link'=>'Таблица умножения', 'href'=>'table.php'],
+    ['link'=>'Калькулятор', 'href'=>'calc.php']
+  ];
   $welcome = ''; // Инициализируем переменную для приветствия
 
   if ($hour >= 0 && $hour < 6) {
@@ -71,21 +80,10 @@
     <!-- Навигация -->
     <h2>Навигация по сайту</h2>
     <!-- Меню -->
-    <?php
-      $leftMenu = [
-        ['link'=>'Домой', 'href'=>'index.php'],
-        ['link'=>'О нас', 'href'=>'about.php'],
-        ['link'=>'Контакты', 'href'=>'contact.php'],
-        ['link'=>'Таблица умножения', 'href'=>'table.php'],
-        ['link'=>'Калькулятор', 'href'=>'calc.php']
-      ];
-    ?>
     <ul>
-      <li><a href='<?= $leftMenu[0]['href']?>'><?= $leftMenu[0]['link']?></a></li>
-      <li><a href='<?= $leftMenu[1]['href']?>'><?= $leftMenu[1]['link']?></a></li>
-      <li><a href='<?= $leftMenu[2]['href']?>'><?= $leftMenu[2]['link']?></a></li>
-      <li><a href='<?= $leftMenu[3]['href']?>'><?= $leftMenu[3]['link']?></a></li>
-      <li><a href='<?= $leftMenu[4]['href']?>'><?= $leftMenu[4]['link']?></a></li>
+      <?php foreach ($leftMenu as $item): ?>
+        <li><a href='<?= $item['href'] ?>'><?= $item['link'] ?></a></li>
+      <?php endforeach; ?>
     </ul>
     <!-- Меню -->
     <!-- Навигация -->
