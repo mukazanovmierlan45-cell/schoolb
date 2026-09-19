@@ -71,17 +71,21 @@
     <!-- Навигация -->
     <h2>Навигация по сайту</h2>
     <!-- Меню -->
+    <?php
+      $leftMenu = [
+        ['link'=>'Домой', 'href'=>'index.php'],
+        ['link'=>'О нас', 'href'=>'about.php'],
+        ['link'=>'Контакты', 'href'=>'contact.php'],
+        ['link'=>'Таблица умножения', 'href'=>'table.php'],
+        ['link'=>'Калькулятор', 'href'=>'calc.php']
+      ];
+    ?>
     <ul>
-      <li><a href='index.php'>Домой</a>
-      </li>
-      <li><a href='about.php'>О нас</a>
-      </li>
-      <li><a href='contact.php'>Контакты</a>
-      </li>
-      <li><a href='table.php'>Таблица умножения</a>
-      </li>
-      <li><a href='calc.php'>Калькулятор</a>
-      </li>
+      <li><a href='<?= $leftMenu[0]['href']?>'><?= $leftMenu[0]['link']?></a></li>
+      <li><a href='<?= $leftMenu[1]['href']?>'><?= $leftMenu[1]['link']?></a></li>
+      <li><a href='<?= $leftMenu[2]['href']?>'><?= $leftMenu[2]['link']?></a></li>
+      <li><a href='<?= $leftMenu[3]['href']?>'><?= $leftMenu[3]['link']?></a></li>
+      <li><a href='<?= $leftMenu[4]['href']?>'><?= $leftMenu[4]['link']?></a></li>
     </ul>
     <!-- Меню -->
     <!-- Навигация -->
