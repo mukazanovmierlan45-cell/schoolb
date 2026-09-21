@@ -47,7 +47,12 @@
       for ($r = 1; $r <= $rows; $r++) {
         echo "<tr>";
         for ($c = 1; $c <= $cols; $c++) {
-          echo "<td>", $r * $c, "</td>";
+          $value = $r * $c;
+          if ($r === 1 || $c === 1) {
+            echo "<td style='font-weight: bold; text-align: center; background-color: #dcdcdc;'>", $value, "</td>";
+          } else {
+            echo "<td>", $value, "</td>";
+          }
         }
         echo "</tr>";
       }
