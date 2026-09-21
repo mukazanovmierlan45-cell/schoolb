@@ -1,6 +1,23 @@
 <?php
   $cols = 5;
   $rows = 5;
+
+  function drawTable($cols, $rows, $color) {
+    echo "<table border='1' width=\"200\">";
+    for ($r = 1; $r <= $rows; $r++) {
+      echo "<tr>";
+      for ($c = 1; $c <= $cols; $c++) {
+        $value = $r * $c;
+        if ($r === 1 || $c === 1) {
+          echo "<td style='font-weight: bold; text-align: center; background-color: ", $color, ";'>", $value, "</td>";
+        } else {
+          echo "<td>", $value, "</td>";
+        }
+      }
+      echo "</tr>";
+    }
+    echo "</table>";
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,22 +59,7 @@
       <input type='submit' value='Создать' />
     </form>
     <!-- Таблица -->
-    <?php
-      echo "<table border='1' width=\"200\">";
-      for ($r = 1; $r <= $rows; $r++) {
-        echo "<tr>";
-        for ($c = 1; $c <= $cols; $c++) {
-          $value = $r * $c;
-          if ($r === 1 || $c === 1) {
-            echo "<td style='font-weight: bold; text-align: center; background-color: #dcdcdc;'>", $value, "</td>";
-          } else {
-            echo "<td>", $value, "</td>";
-          }
-        }
-        echo "</tr>";
-      }
-      echo "</table>";
-    ?>
+    <?php drawTable($cols, $rows, '#dcdcdc'); ?>
     <!-- Таблица -->
     <!-- Область основного контента -->
   </div>
