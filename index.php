@@ -36,6 +36,22 @@
   } else {
     $welcome = 'Доброй ночи';
   }
+
+  function drawMenu($menu, $vertical = true) {
+    if ($vertical) {
+      echo "<ul>";
+      foreach ($menu as $item) {
+        echo "<li><a href='", $item['href'], "'>", $item['link'], "</a></li>";
+      }
+      echo "</ul>";
+    } else {
+      echo "<ul style='display: flex; list-style: none; padding: 0; gap: 15px;'>";
+      foreach ($menu as $item) {
+        echo "<li><a href='", $item['href'], "'>", $item['link'], "</a></li>";
+      }
+      echo "</ul>";
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -80,11 +96,7 @@
     <!-- Навигация -->
     <h2>Навигация по сайту</h2>
     <!-- Меню -->
-    <ul>
-      <?php foreach ($leftMenu as $item): ?>
-        <li><a href='<?= $item['href'] ?>'><?= $item['link'] ?></a></li>
-      <?php endforeach; ?>
-    </ul>
+    <?php drawMenu($leftMenu, true); ?>
     <!-- Меню -->
     <!-- Навигация -->
   </div>
